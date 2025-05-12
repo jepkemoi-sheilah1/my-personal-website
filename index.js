@@ -1,20 +1,31 @@
-//form functionality//
-document.getElementById( "contact-form").addEventListener("submit",function( event)
-{
-    event.preventDefault();// Prevents efault form submission.
-const name = document.getElementById("name") .value;
-const email =document.getElementById( "email") .value
-const message =document.getElementById( "message") .value
+// Smooth scroll for navigation links
+document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault(); // prevent the default jump
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
+  // Mobile menu toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
 
-//confirmatioon message
-if( name$$email$$message){
-    document.getElementById("response").innerHTML=
-    <p>`Thank you!$ your message has been received`;</p>
-    document.getElementById( "contact-form").reset;();
-    //reset the form
-}
-        else {document.getElementById( " response").innerHTML=`<p style ="color:green"> please fill in all Field this Field.</p>`;
-            
-            
-        }
- )
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
+
+// Show alert on form submission
+const contactForm = document.querySelector('form');
+
+contactForm.addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent actual submission (for now)
+  alert("Thank you! Your message has been sent.");
+  contactForm.reset(); // Optional: clear the form
+});

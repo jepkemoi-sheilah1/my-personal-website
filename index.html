@@ -10,8 +10,12 @@
 <body>
     <!-- Navigation Bar -->
     <nav>
-        <div class="logo">Jepkemoi Sheilah</div>
+        <div class="logo">Jepkemoi</div>
         <ul class="nav-links">
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+              </div>
+              
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -23,20 +27,21 @@
     <!-- main Section -->
     <header id="home">
         <img src="portfolio image.jpg" alt="Profile Image">
-        <h1>Hi, I'm <span class="highlight">J</span>epkemoi <span class="highlight">S</span>heillah</h1>
-        <h2>Aspiring Software Developer</h2>
-        <a href="#contact" class="btn">Contact Me</a>
+        <div class ="intro">
+            <h1>Hi, I'm <span class="highlight">J</span>epkemoi <span class="highlight">S</span>heillah</h1>
+            <h2>A Software Engineer</h2>
+
+        </div>  
+        
     </header>
 
     <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>I am a tech enthusiast, with a great passion in developing functional websites.</p>
-         <p>I have a strong  focus on the front-end development.</p>
-           <p>I love creating beautiful and functional websites. </p>
-            <p>I am currently honing my software development skills at Moringa School .</p>.
-            <p>Currentlly scalling up on ; HTML,CSS,javascript,Reactjs,DJango SQL and python.</p>
-            <p>Here at Moringa School am gaining practicals on both front-end and back-end development.I am a quick learner and highly adaptive. </p>
+        <p>I am a tech enthusiast, passionate about technology,especially Software Development.</p>
+        <p>I am a self-motivated individual with a strong desire to learn and grow in the field of
+           software engineering. I have a keen interest in web development and enjoy creating user-friendly applications that solve real-world problems.</p>
+        
         
     </section>
          
@@ -45,24 +50,53 @@
     <section id="skills">
         <h2>My Skills</h2>
         <div class="skills-container">
+            <p> I've hone my skills in various programming languages ,frameworks and development tools ,that allow deliver projects efficiently.</p>
+            <div class="skill-group">
+                
+            <h3>Frontend Skills</h3>
             <ul>
-                <li>Web Development</li>
-                <li>JavaScript</li>
-                <li>Project Management</li>
-                <li>Creative Thinking</li>
-                <li>Git & Version Control</li>
-                <li> Problem solving</li>
+                <li><i class="fab fa-html5"></i>HTML5</li>
+                <li><i class="fab fa-css3-alt"></i>CSS</li>
+                <li><i class= " fab fa-js-square"></i>JavaScript</li>
+                <li><i class fab fa-react></i>React.js</li>
             </ul>
+            </div>
+
+            <div class="skill-group">
+            <h3>Backend Skills</h3>
+            <ul>
+                <li><i class="fab fa-python"></i> Python</li>
+                <li><i class="fas fa-database"></i> SQL</li>
+                    <li><i class="fas fa-project-diagram"></i> Django</li>
+                     <li><i class="fas fa-plug"></i> APIs</li>
+      </ul>
+    </div>     
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects">
         <h2>My Projects</h2>
-        <div class="project">
-            <h3>Personal Portfolio </h3>
-            <p> My very first project is building my personal portfolio to showcase my skills and expand my proffesional network in Software engineering. </p>
-            <p>A responsive portfolio website built using HTML  ,CSS  and javascript to showcase my skills and projects.</p>
+        <div class="project-tag">web Apps</div>
+
+        <div class="project-container">
+            <div class ="project-card">
+            <h3> Weather App</h3>
+            <p>This is a weather application that provides real-time weather updates for any location.</p>
+            <a href="" target="_blank">View Project</a>
+            </div>
+            <div class ="project-card">
+            <h3>to-do app</h3>
+            <p>This is a simple to-do list application that allows users to manage their tasks efficiently.</p>
+            <a href="" target="_blank">View Project</a>
+            </div>
+            <div class ="project-card">
+            <h3>Expense Tracker</h3>
+            <p>This is a web application that helps users track their expenses and manage their budgets effectively.</p>
+            <a href="" target="_blank">View Project</a>
+            </div>
+            <div style="text-align: center;">
+         <button class="btn">View All Projects</button>
         </div>
     </section>
 
@@ -70,18 +104,48 @@
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Me</h2>
+        <p> Do you have any projects that you would like us to collaborate or any inquiries? , feel free to reach out!</p>
         <p>
+            <h3>Get in Touch!</h3>
             <i class="fas fa-envelope"></i> 
-            <a href="jepkemoishyllah@gmail.com">jepkemoishyllah@gmail.com</a>
+            <a href="mailto:jepkemoishyllah@gmail.com">jepkemoishyllah@gmail.com</a>
         </p>
         <p>
             <i class="fab fa-github"></i> 
-            <a href="https://github.com/Jepkemoi_Sheilah1" target="_blank">Jepkemoi Jepkemoi_Sheilah1</a>
+            <a href="https://github.com/Jepkemoi_Sheilah1" target="_blank"> Jepkemoi_Sheilah1</a>
+
+        <p>
+            <i class="fab fa-linkedin"></i> 
+            <a href="https://www.linkedin.com/in/shyllah jepkemoi-1b0b4a1b2/" target="_blank">Shyllah Jepkemoi</a>
+
         </p>
+        <p>
+            <i class="fab fa-whatsapp"></i> 
+            <a href="https://wa.me/254750972619" target="_blank">Jepkemoi Sheilah</a>
+        <p>
+            <i class="fas fa-phone"></i> 
+            <a href="tel:+254750972619">+254750972619</a>
+        </p>
+        <p>
+            <i class="fas fa-map-marker-alt"></i> 
+            <a href="#">Nairobi, Kenya</a>
+        </p>
+
+        <form action="submit_form.py" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Jepkemoi Sheilah | All Rights Reserved</p>
+        <p>&copy; 2023 Jepkemoi Sheilah|Software Engineer|All Rights Reserved</p>
+        <div class="social-icons">
+            <a href="" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="" target="_blank"><i class="fas fa-envelope"></i></a>
+        </div>
     </footer>
     <script src="index.js"></script>
 </body>
