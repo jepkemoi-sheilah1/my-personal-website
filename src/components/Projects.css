@@ -1,0 +1,51 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.project-card p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.project-technologies {
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+  display: inline-block;
+  background: #3498db;
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-links a {
+  display: inline-block;
+  margin-right: 1rem;
+  color: #3498db;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.project-links a:hover {
+  color: #2980b9;
+}

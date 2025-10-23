@@ -1,0 +1,19 @@
+/* Remove default Vite styles that might be causing issues */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex: 1;
+  padding-top: 80px; /* Account for fixed header */
+}

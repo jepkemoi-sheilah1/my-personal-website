@@ -1,0 +1,14 @@
+.about {
+  background: #f8f9fa;
+}
+
+.about-text {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
