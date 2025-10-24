@@ -24,6 +24,9 @@ const Contact = () => {
               <div className="contact-item">
                 <strong>Location:</strong> Nairobi, Kenya
               </div>
+              <div className="contact-item">
+                <strong>CV:</strong> <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
+              </div>
             </div>
           </div>
         </div>
