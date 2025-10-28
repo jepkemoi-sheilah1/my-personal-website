@@ -16,8 +16,8 @@ const Hero = () => {
             <h2>Software Engineer 💻</h2>
             <p>“I’m a passionate software engineer specializing in front-end development. I love building clean, functional, and visually appealing web experiences.”</p>
             <div className="hero-buttons">
-              <a href="#contact" className="btn btn-primary">Hire Me</a>
-              <a href="/cv.pdf" className="btn btn-secondary" download>Download CV</a>
+              <a href="/contact" className="btn btn-primary">Hire Me</a>
+              <a href="/my-personal-website/cv.pdf" className="btn btn-secondary" download>Download CV</a>
             </div>
             <div className="hero-social">
               <div className="social-links">
