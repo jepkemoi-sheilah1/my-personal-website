@@ -12,12 +12,12 @@ const Hero = () => {
       <div className="container">
         <div className="hero-content">
           <div className="hero-text">
-            <h1>Hi, I'm Kibet Jepkemoi Sheilah</h1>
-            <h2>Software Developer</h2>
-            <p>Self-driven and results-oriented Software Developer with a degree in Business Information Technology (JKUAT) focusing on building scalable and functional systems.</p>
+            <h1>Hi there 👋🏽 I’m Jepkemoi Sheilah</h1>
+            <h2>Software Engineer 💻</h2>
+            <p>“I’m a passionate software engineer specializing in front-end development. I love building clean, functional, and visually appealing web experiences.”</p>
             <div className="hero-buttons">
-              <a href="#contact" className="btn btn-primary">Get In Touch</a>
-              <a href="#projects" className="btn btn-secondary">View My Work</a>
+              <a href="#contact" className="btn btn-primary">Hire Me</a>
+              <a href="/cv.pdf" className="btn btn-secondary" download>Download CV</a>
             </div>
             <div className="hero-social">
               <div className="social-links">
@@ -37,7 +37,7 @@ const Hero = () => {
             </div>
           </div>
           <div className="hero-image">
-            <img src="/portfolio-image.jpg" alt="Kibet Jepkemoi Sheilah" />
+            <img src="/portfolio-image.jpg" alt="Jepkemoi Sheilah" />
           </div>
         </div>
       </div>

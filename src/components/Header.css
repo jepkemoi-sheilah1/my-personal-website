@@ -5,7 +5,7 @@
   width: 100%;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--border);
   z-index: 1000;
   padding: 1rem 0;
 }
@@ -22,12 +22,7 @@
 .logo a {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 700;
   text-decoration: none;
-  color: #1a1a1a;
-  letter-spacing: -0.5px;
   transition: transform 0.3s ease;
 }
 
@@ -35,36 +30,11 @@
   transform: scale(1.05);
 }
 
-.logo-text {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  letter-spacing: -0.5px;
-}
-
-.logo-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
-  transition: all 0.3s ease;
-}
-
-.logo-icon:hover {
-  transform: rotate(10deg);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
-}
-
-.code-bracket {
-  font-family: 'Courier New', monospace;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #ffffff;
-  line-height: 1;
+.logo a img {
+  height: 40px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
 }
 
 .nav-list {
@@ -77,7 +47,7 @@
 
 .nav-list a {
   text-decoration: none;
-  color: #666;
+  color: var(--text-secondary);
   font-weight: 500;
   font-size: 0.95rem;
   letter-spacing: 0.5px;
@@ -87,7 +57,7 @@
 
 .nav-list a:hover,
 .nav-list a.active {
-  color: #1a1a1a;
+  color: var(--text-primary);
 }
 
 .nav-list a::after,
@@ -98,7 +68,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: #2563eb;
+  background: var(--accent);
   transition: width 0.3s ease;
 }
 
@@ -121,7 +91,7 @@
 .menu-toggle span {
   width: 20px;
   height: 2px;
-  background: #1a1a1a;
+  background: var(--text-primary);
   transition: all 0.3s ease;
 }
 
@@ -138,7 +108,7 @@
     width: 100%;
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid var(--border);
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
@@ -165,12 +135,12 @@
     display: block;
     padding: 1rem 2rem;
     font-size: 1.1rem;
-    color: #333;
+    color: var(--text-secondary);
   }
 
   .nav-list a:hover {
-    background: #f8f9fa;
-    color: #2563eb;
+    background: var(--bg-secondary);
+    color: var(--accent);
   }
 
   .nav-list a::after {
@@ -201,16 +171,7 @@
     font-size: 1.3rem;
   }
 
-  .logo-text {
-    font-size: 1.3rem;
-  }
-
-  .logo-icon {
-    width: 28px;
-    height: 28px;
-  }
-
-  .code-bracket {
-    font-size: 0.9rem;
+  .logo a img {
+    height: 35px;
   }
 }

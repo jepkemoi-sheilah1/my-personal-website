@@ -30,11 +30,15 @@
 
 .experience-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 2.5rem;
+  justify-content: space-between;
 }
 
 .experience-item {
+  flex: 1 1 calc(50% - 1.25rem);
+  min-width: 300px;
   background: white;
   padding: 2rem;
   border-radius: 10px;
@@ -115,6 +119,15 @@
   .section-title {
     font-size: 2rem;
     margin-bottom: 2rem;
+  }
+
+  .experience-list {
+    flex-direction: column;
+  }
+
+  .experience-item {
+    flex: 1 1 100%;
+    min-width: unset;
   }
 
   .experience-header {

@@ -1,9 +1,10 @@
-import React, { useState } from 'react'; // eslint-disable-line no-unused-vars
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'; // eslint-disable-line no-unused-vars
+import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -13,16 +14,18 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="logo">
-          <Link to="/">KJS</Link>
+          <Link to="/">
+            <img src="/Untitled design.png" alt="Jepkemoi Sheilah Logo" />
+          </Link>
         </div>
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <ul className="nav-list">
-            <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
-            <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About</Link></li>
-            <li><Link to="/skills" onClick={() => setIsMenuOpen(false)}>Skills</Link></li>
-            <li><Link to="/projects" onClick={() => setIsMenuOpen(false)}>Projects</Link></li>
-            <li><Link to="/experience" onClick={() => setIsMenuOpen(false)}>Experience</Link></li>
-            <li><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
+            <li><Link to="/" className={location.pathname === '/' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+            <li><Link to="/about" className={location.pathname === '/about' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>About</Link></li>
+            <li><Link to="/skills" className={location.pathname === '/skills' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Skills</Link></li>
+            <li><Link to="/projects" className={location.pathname === '/projects' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Projects</Link></li>
+            <li><Link to="/experience" className={location.pathname === '/experience' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Experience</Link></li>
+            <li><Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
           </ul>
         </nav>
         <button className="menu-toggle" onClick={toggleMenu}>

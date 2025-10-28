@@ -21,15 +21,17 @@ const Skills = () => {
           {Object.entries(skills).map(([category, skillList]) => (
             <div key={category} className="skill-category">
               <h3>{category}</h3>
-              <ul>
+              <div className="skill-items">
                 {skillList.map(skill => (
-                  <li key={skill}>{skill}</li>
+                  <div key={skill} className="skill-item">
+                    {skill}
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>
-      </div>ADD
+      </div>
     </section>
   );
 };
