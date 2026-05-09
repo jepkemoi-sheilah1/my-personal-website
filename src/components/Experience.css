@@ -1,149 +1,264 @@
-.experience.section {
-  padding: 80px 0;
-  background: var(--section-bg, #f8f9fa);
+/* Experience.css */
+.experience {
+  background: #ffffff;
+  padding: 6rem 0;
 }
 
-.experience .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.section-title {
+.experience-heading {
+  color: #0066ff !important;
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: var(--primary-color, #2563eb);
+}
+
+/* Tabs */
+.exp-tabs {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2.5rem 0;
+}
+
+.exp-tab {
+  padding: 0.6rem 1.5rem;
+  border: 2px solid #e0e8ff;
+  border-radius: 50px;
+  background: #ffffff;
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.exp-tab:hover {
+  border-color: #0066ff;
+  color: #0066ff;
+}
+
+.exp-tab.active {
+  background: #0066ff;
+  border-color: #0066ff;
+  color: #ffffff;
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e0e8ff;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 1.5rem;
   position: relative;
 }
 
-.section-title::after {
-  content: '';
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 1.25rem;
   position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: var(--accent-color, #f59e0b);
+  left: -2rem;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 2px #e0e8ff;
 }
 
-.experience-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 2.5rem;
-  justify-content: space-between;
+.timeline-card {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #e0e8ff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
 }
 
-.experience-item {
-  flex: 1 1 calc(50% - 1.25rem);
-  min-width: 300px;
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid var(--primary-color, #2563eb);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.timeline-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.08);
+  border-color: #b3ccff;
 }
 
-.experience-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.experience-header {
+.timeline-card-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  gap: 1rem;
 }
 
-.experience-header h3 {
-  font-size: 1.4rem;
-  color: var(--text-color, #333);
+.timeline-card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.exp-type-badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.exp-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0a0a1a;
+  margin: 0.25rem 0;
+}
+
+.exp-subtitle {
+  font-size: 0.85rem;
+  color: #64748b;
   margin: 0;
 }
 
-.experience-period {
-  background: var(--primary-color, #2563eb);
-  color: white;
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
+.exp-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
 }
 
-.experience-company {
-  margin-bottom: 1rem;
+.exp-company, .exp-location {
+  font-size: 0.82rem;
+  color: #64748b;
 }
 
-.company-name {
-  font-size: 1.1rem;
+.timeline-card-right {
+  flex-shrink: 0;
+}
+
+.exp-period {
+  display: inline-block;
+  padding: 0.3rem 0.85rem;
+  background: #f0f4ff;
+  border: 1px solid #e0e8ff;
+  border-radius: 50px;
+  font-size: 0.78rem;
   font-weight: 600;
-  color: var(--secondary-color, #64748b);
+  color: #0066ff;
+  white-space: nowrap;
 }
 
-.company-location {
-  font-size: 1rem;
-  color: var(--text-light, #666);
-}
-
-.experience-responsibilities {
+.exp-responsibilities {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.experience-responsibilities li {
-  padding: 0.5rem 0;
-  padding-left: 1.5rem;
-  position: relative;
+.exp-responsibilities li {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: #444;
   line-height: 1.6;
 }
 
-.experience-responsibilities li::before {
-  content: '▹';
-  position: absolute;
-  left: 0;
-  color: var(--accent-color, #f59e0b);
+.exp-bullet {
+  flex-shrink: 0;
   font-weight: bold;
+  margin-top: 1px;
 }
 
-/* Responsive Design */
+/* Certifications */
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.cert-card {
+  background: #ffffff;
+  border: 1px solid #e0e8ff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.08);
+}
+
+.cert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+.cert-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+}
+
+.cert-issuer {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.cert-period {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  background: #f0f4ff;
+  border: 1px solid #e0e8ff;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #0066ff;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.cert-description {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin: 0;
+}
+
 @media (max-width: 768px) {
-  .experience.section {
-    padding: 60px 0;
+  .timeline {
+    padding-left: 1.5rem;
   }
 
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .experience-list {
+  .timeline-card-header {
     flex-direction: column;
   }
 
-  .experience-item {
-    flex: 1 1 100%;
-    min-width: unset;
-  }
-
-  .experience-header {
+  .exp-tabs {
     flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
   }
 
-  .experience-header h3 {
-    font-size: 1.2rem;
-  }
-
-  .experience-item {
-    padding: 1.5rem;
-  }
-
-  .experience-period {
-    align-self: flex-start;
+  .certs-grid {
+    grid-template-columns: 1fr;
   }
 }

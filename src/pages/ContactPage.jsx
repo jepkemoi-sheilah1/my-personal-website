@@ -1,14 +1,13 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+// ContactPage.jsx
+import React from 'react';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
-const ContactPage = () => {
-  return (
-    <div className="page">
-      <Contact />
-      <Footer />
-    </div>
-  );
-};
+const ContactPage = () => (
+  <div className="page">
+    <Contact />
+    <Footer />
+  </div>
+);
 
 export default ContactPage;

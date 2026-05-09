@@ -1,122 +1,145 @@
-import React, { useState, useEffect } from 'react';
-import { GitBranch, Download, ArrowRight, MapPin } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 import './Hero.css';
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
-  const roles = ['Software Engineer', 'Frontend Developer', 'Angular Developer', 'React Developer'];
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const roles = [
+    'Software Engineer',
+    'Frontend Developer',
+    'React Enthusiast',
+    'Problem Solver',
+  ];
 
   useEffect(() => {
-    let charIndex = 0;
-    let roleIndex = 0;
-    let isDeleting = false;
-
-    const type = () => {
-      const current = roles[roleIndex];
-      if (!isDeleting) {
-        setDisplayText(current.slice(0, charIndex + 1));
-        charIndex++;
-        if (charIndex === current.length) {
-          isDeleting = true;
-          setTimeout(type, 1500);
-          return;
-        }
-      } else {
-        setDisplayText(current.slice(0, charIndex - 1));
-        charIndex--;
-        if (charIndex === 0) {
-          isDeleting = false;
-          roleIndex = (roleIndex + 1) % roles.length;
-        }
-      }
-      setTimeout(type, isDeleting ? 50 : 80);
-    };
-
-    const timeout = setTimeout(type, 500);
+    const current = roles[roleIndex];
+    let timeout;
+    if (!isDeleting && displayText === current) {
+      timeout = setTimeout(() => setIsDeleting(true), 2000);
+    } else if (isDeleting && displayText === '') {
+      setIsDeleting(false);
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    } else {
+      timeout = setTimeout(() => {
+        setDisplayText(prev =>
+          isDeleting ? prev.slice(0, -1) : current.slice(0, prev.length + 1)
+        );
+      }, isDeleting ? 50 : 100);
+    }
     return () => clearTimeout(timeout);
-  }, []);
+  }, [displayText, isDeleting, roleIndex]);
 
-  const floatingSkills = [
-    { label: 'Angular', emoji: 'A', position: 'top-right' },
-    { label: 'React', emoji: 'R', position: 'middle-right' },
-    { label: 'Python', emoji: 'Py', position: 'bottom-right' },
-    { label: 'TypeScript', emoji: 'TS', position: 'top-left' },
-    { label: 'Tailwind', emoji: 'TW', position: 'bottom-left' },
+  const socialLinks = [
+    {
+      name: 'GitHub',
+      url: 'https://github.com/jepkemoi-sheilah1',
+      icon: (
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+      ),
+    },
+    {
+      name: 'LinkedIn',
+      url: 'https://linkedin.com/in/sheilah-jepkemoi-a50454282',
+      icon: (
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      ),
+    },
   ];
 
   const stats = [
-    { value: '3+', label: 'Projects Built' },
-    { value: '2+', label: 'Years Experience' },
-    { value: '5+', label: 'Technologies' },
+    { number: '3+', label: 'Projects Built' },
+    { number: '2+', label: 'Years Experience' },
+    { number: '5+', label: 'Technologies' },
   ];
 
   return (
     <section id="home" className="hero">
-      <div className="hero-container">
-        <div className="hero-text">
-          <div className="available-badge">
-            <span className="badge-dot" />
-            Available for opportunities
-          </div>
-          <h1 className="hero-name">
-            Hi, I am <span className="hero-name-highlight">Jepkemoi</span>
-            <br />
-            <span className="hero-name-highlight">Sheilah</span>
-          </h1>
-          <div className="hero-role">
-            <span>{displayText}</span>
-            <span className="cursor">|</span>
-          </div>
-          <p className="hero-bio">
-            A passionate software engineer specializing in front-end development.
-            I love building clean, functional, and visually appealing web experiences.
-            I thrive so well in collaborative environments and am always eager to learn new technologies and improve my skills.
-          </p>
-          <div className="hero-location">
-            <MapPin size={14} />
-            <span>Nairobi, Kenya</span>
-          </div>
-          <div className="hero-buttons">
-            <a href="mailto:jepkemoishyllah@gmail.com" className="btn btn-primary">
-              See My Work <ArrowRight size={16} />
-            </a>
-            <a href="/my-personal-website/cv.pdf" className="btn btn-secondary" download>
-              Download CV
-            </a>
-          </div>
-          <div className="hero-socials">
-            <a href="https://github.com/Jepkemoi_Sheilah1" target="_blank" rel="noopener noreferrer" className="social-link">
-              GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/sheilah-jepkemoi-a50454282/" target="_blank" rel="noopener noreferrer" className="social-link">
-              LinkedIn
-            </a>
-          </div>
-        </div>
-        <div className="hero-visual">
-          <div className="avatar-wrapper">
-            {floatingSkills.map((skill) => (
-              <div key={skill.label} className={"floating-skill skill-" + skill.position}>
-                <span>{skill.emoji}</span>
-                <span>{skill.label}</span>
-              </div>
-            ))}
-            <div className="avatar-ring">
-              <div className="avatar-circle">
-                <img src="/my-personal-website/portfolio-image.jpg" alt="Jepkemoi Sheilah" />
-              </div>
+      <div className="container">
+        <div className="hero-content">
+
+          <div className="hero-text">
+            <div className="hero-badge">
+              <span className="badge-dot" />
+              Available for opportunities
             </div>
-            <div className="exp-badge">2+ yrs exp</div>
+
+            <h1>
+              Hi, I'm <span className="hero-name-blue">Jepkemoi</span>{' '}
+              <span className="hero-name-cyan">Sheilah</span>
+            </h1>
+
+            <h2 className="hero-role">
+              <span className="typing-text">{displayText}</span>
+              <span className="cursor">|</span>
+            </h2>
+
+            <p className="hero-desc">
+              A passionate software engineer specializing in front-end development.
+              I love building clean, functional, and visually appealing web experiences
+              that make a real difference.
+            </p>
+
+            <div className="hero-buttons">
+              <a href="/contact" className="btn btn-primary">
+                Hire Me
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+              <a href="/my-personal-website/cv.pdf" className="btn btn-secondary" download>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                </svg>
+                Download CV
+              </a>
+            </div>
+
+            <div className="hero-social">
+              {socialLinks.map((s) => (
+                <a key={s.name} href={s.url} className="social-link" target="_blank" rel="noopener noreferrer">
+                  {s.icon}
+                  <span>{s.name}</span>
+                </a>
+              ))}
+            </div>
           </div>
+
+          <div className="hero-image-wrapper">
+            <div className="hero-image-ring" />
+            <div className="hero-image-ring hero-image-ring-2" />
+            <div className="hero-image">
+              <img src="/my-personal-website/portfolio-image.jpg" alt="Jepkemoi Sheilah" />
+            </div>
+            <div className="hero-badge-float hero-badge-float-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+              React Dev
+            </div>
+            <div className="hero-badge-float hero-badge-float-2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Flask & Python
+            </div>
+            <div className="hero-badge-float hero-badge-float-3">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              2+ yrs exp
+            </div>
+          </div>
+
         </div>
-      </div>
-      <div className="hero-stats">
-        {stats.map((stat) => (
-          <div key={stat.label} className="stat-card">
-            <span className="stat-value">{stat.value}</span>
-            <span className="stat-label">{stat.label}</span>
-          </div>
-        ))}
+
+        <div className="hero-stats">
+          {stats.map((s) => (
+            <div key={s.label} className="hero-stat">
+              <span className="stat-number">{s.number}</span>
+              <span className="stat-label">{s.label}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

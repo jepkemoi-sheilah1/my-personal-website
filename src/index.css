@@ -1,15 +1,16 @@
-/* index.css - Global Styles: Electric Blue & Cyan Light Theme */
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
 
 :root {
   --text-primary: #0a0a1a;
-  --text-secondary: #444;
-  --text-light: #888;
+  --text-secondary: #444466;
+  --text-light: #8888aa;
   --bg-primary: #f0f4ff;
   --bg-surface: #ffffff;
   --bg-surface-2: #f5f8ff;
   --accent: #0066ff;
+  --accent-hover: #0052cc;
   --accent-cyan: #00c8e0;
+  --accent-cyan-hover: #00a8be;
   --accent-light: #e6f0ff;
   --accent-cyan-light: #e0fafd;
   --border: #e0e8ff;
@@ -49,50 +50,32 @@ section {
   padding: 0 2rem;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
-::-webkit-scrollbar-track {
-  background: var(--bg-primary);
-}
+::selection { background: rgba(0,102,255,0.12); color: var(--accent); }
 
-::-webkit-scrollbar-thumb {
-  background: var(--border-strong);
-  border-radius: 3px;
-}
+.section { padding: 6rem 0; }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
-}
-
-/* Selection */
-::selection {
-  background: rgba(0, 102, 255, 0.15);
-  color: var(--accent);
-}
-
-/* Shared section styles */
-.section {
-  padding: 6rem 0;
-}
+.section-header { text-align: center; margin-bottom: 3.5rem; }
 
 .section-label {
   display: block;
+  text-align: center;
   color: var(--accent);
   font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  text-align: center;
+  margin-bottom: 0.6rem;
 }
 
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #0066ff;
   text-align: center;
   margin-bottom: 0.75rem;
 }
@@ -100,43 +83,41 @@ section {
 .section-subtitle {
   font-size: 1rem;
   color: var(--text-light);
-  text-align: center;
-  max-width: 500px;
-  margin: 0 auto 3rem;
+  max-width: 480px;
+  margin: 0 auto;
   line-height: 1.7;
 }
 
-/* Shared button styles */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.75rem;
+  padding: 0.8rem 1.8rem;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
-  letter-spacing: 0.3px;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   cursor: pointer;
   border: 2px solid transparent;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .btn-primary {
   background: var(--accent);
-  color: #ffffff;
-  box-shadow: 0 4px 16px rgba(0, 102, 255, 0.3);
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(0,102,255,0.28);
 }
 
 .btn-primary:hover {
-  background: #0052cc;
+  background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.4);
+  box-shadow: 0 8px 26px rgba(0,102,255,0.38);
 }
 
 .btn-secondary {
-  background: #ffffff;
+  background: #fff;
   color: var(--accent);
   border-color: var(--accent);
 }
@@ -149,15 +130,15 @@ section {
 .btn-outline {
   background: transparent;
   color: var(--accent);
-  border-color: var(--accent);
+  border-color: var(--border-strong);
 }
 
 .btn-outline:hover {
+  border-color: var(--accent);
   background: var(--accent-light);
   transform: translateY(-2px);
 }
 
-/* Fade-in animation */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -169,7 +150,6 @@ section {
   transform: translateY(0);
 }
 
-/* App layout */
 #root {
   width: 100%;
   min-height: 100vh;
@@ -182,6 +162,7 @@ section {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: var(--bg-primary);
 }
 
 .page {
@@ -191,6 +172,4 @@ section {
   flex-direction: column;
 }
 
-.footer {
-  margin-top: auto;
-}
+.footer { margin-top: auto; }

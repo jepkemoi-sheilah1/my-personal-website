@@ -1,4 +1,4 @@
-/* Remove default Vite styles that might be causing issues */
+/* App.css */
 #root {
   width: 100%;
   min-height: 100vh;
@@ -11,10 +11,12 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: #f0f4ff;
 }
+
 .page {
   flex: 1;
-  padding-top: 80px; /* Account for fixed header */
+  padding-top: 80px;
   display: flex;
   flex-direction: column;
 }

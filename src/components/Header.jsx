@@ -13,7 +13,6 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close menu on route change
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location]);
@@ -32,7 +31,7 @@ const Header = () => {
       <div className="container">
         <div className="logo">
           <Link to="/">
-            <img src="/my-personal-website/Untitled design.png" alt="Jepkemoi Sheilah Logo" />
+            <img src="/my-personal-website/Untitled design.png" alt="Sheilah Logo" />
           </Link>
         </div>
 
@@ -53,9 +52,7 @@ const Header = () => {
         </nav>
 
         <div className="header-right">
-          <Link to="/contact" className="header-cta">
-            Let's Talk
-          </Link>
+          <Link to="/contact" className="header-cta">Let's Talk</Link>
           <button
             className={`menu-toggle ${isMenuOpen ? 'menu-open' : ''}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}

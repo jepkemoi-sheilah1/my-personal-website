@@ -1,21 +1,59 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import './About.css';
 
 const About = () => {
+  const highlights = [
+    { icon: '🎓', title: 'Education', desc: 'Software Engineering graduate with a strong foundation in CS fundamentals.' },
+    { icon: '💼', title: 'Experience', desc: '2+ years building full-stack web applications with modern frameworks.' },
+    { icon: '🌍', title: 'Location', desc: 'Based in Nairobi, Kenya — open to remote opportunities worldwide.' },
+    { icon: '🚀', title: 'Passion', desc: 'Passionate about clean code, great UX, and products that solve real problems.' },
+  ];
+
   return (
     <section id="about" className="about section">
       <div className="container">
-        <h2 className="section-title">About Me</h2>
-        <div className="about-content">
-          <div className="about-text">
-            <p>
-              Dedicated Software Developer with a focus on building scalable,
-               functional systems and driving technical innovation. 
-               Brings strong problem-solving abilities, adaptability, 
-               and attention to detail to collaborative environments. 
-               Committed to continuous learning and delivering solutions that create meaningful impact.
+        <div className="section-header">
+          <span className="section-label">Who I Am</span>
+          <h2 className="section-title">About Me</h2>
+        </div>
 
+        <div className="about-content">
+          <div className="about-text-side">
+            <h3 className="about-greeting">
+              A Software Engineer who loves building things that <span className="highlight-blue">matter</span>.
+            </h3>
+            <p>
+              I'm Jepkemoi Sheilah, a passionate software engineer based in Nairobi, Kenya.
+              I specialize in front-end development with React, but I'm equally comfortable
+              working on the backend with Python and Flask or Java and Spring Boot.
             </p>
+            <p>
+              My journey in tech has been driven by curiosity and a love for problem-solving.
+              I enjoy turning complex problems into simple, beautiful, and intuitive interfaces.
+              When I'm not coding, you'll find me exploring new technologies and contributing to projects.
+            </p>
+
+            <div className="about-highlights">
+              {highlights.map((h) => (
+                <div key={h.title} className="highlight-item">
+                  <div className="highlight-icon">{h.icon}</div>
+                  <div>
+                    <h4>{h.title}</h4>
+                    <p>{h.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="about-actions">
+              <a href="/my-personal-website/cv.pdf" download className="btn btn-primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                </svg>
+                Download CV
+              </a>
+              <a href="/contact" className="btn btn-secondary">Get In Touch</a>
+            </div>
           </div>
         </div>
       </div>
