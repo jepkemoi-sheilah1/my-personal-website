@@ -1,14 +1,16 @@
 .about {
-  background: #f8f9fa;
+  background: var(--bg-surface-2);
 }
 
 .about-text {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  color: var(--text-primary);  
 }
 
 .about-text p {
   font-size: 1.1rem;
   line-height: 1.6;
+  margin-top: 1rem;
 }

@@ -9,7 +9,12 @@ const About = () => {
         <div className="about-content">
           <div className="about-text">
             <p>
-              Dedicated Software Developer with a focus on building scalable, functional systems and driving technical innovation. Brings strong problem-solving abilities, adaptability, and attention to detail to collaborative environments. Committed to continuous learning and delivering solutions that create meaningful impact.
+              Dedicated Software Developer with a focus on building scalable,
+               functional systems and driving technical innovation. 
+               Brings strong problem-solving abilities, adaptability, 
+               and attention to detail to collaborative environments. 
+               Committed to continuous learning and delivering solutions that create meaningful impact.
+
             </p>
           </div>
         </div>
