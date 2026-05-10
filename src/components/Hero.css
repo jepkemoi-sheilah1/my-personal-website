@@ -103,7 +103,7 @@
 .hero-role {
   font-size: 1.35rem;
   font-weight: 500;
-  color: #444466;
+  color: #00c8e0;
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
@@ -154,7 +154,7 @@
   border: 1px solid #dde6ff;
   border-radius: 50px;
   text-decoration: none;
-  color: #444466;
+  color: #00c8e0;
   font-size: 0.85rem;
   font-weight: 500;
   transition: all 0.25s ease;
@@ -254,7 +254,7 @@
 .hero-badge-float-3 {
   bottom: 6%;
   left: 10px;
-  color: #444466;
+  color: #00c8e0;
   border-color: #dde6ff;
   animation: floatBadge 3s ease-in-out infinite 2s;
 }
@@ -412,7 +412,7 @@
 .hero-role {
   font-size: 1.25rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: #00c8e0;
   display: flex;
   align-items: center;
   gap: 2px;
