@@ -8,21 +8,22 @@ const Projects = () => {
     {
       title: 'Budget-Smart Application',
       description: 'A personal finance app that enables users to create budgets, categorize expenses, and track spending trends over time. Features user authentication, real-time data storage, and interactive charts for budget management.',
-      technologies: ['React', 'Flask', 'SQLite'],
+      technologies: ['React', 'Flask', 'PostgreSQL'],
       githubLink: 'https://github.com/jepkemoi-sheilah1/budget-smart',
-      demoLink: null,
+      demoLink: 'https://budget-smart-three.vercel.app/',
       emoji: '💰',
       color: '#667eea',
     },
-    {
-      title: 'Weather Application',
-      description: 'A sleek weather app integrating the OpenWeather API to display real-time weather data, forecasts, and conditions. Built with vanilla JavaScript and dynamic UI updates based on live API responses.',
-      technologies: ['JavaScript', 'HTML', 'CSS', 'OpenWeather API'],
-      githubLink: 'https://github.com/jepkemoi-sheilah1/Weather-App',
-      demoLink: null,
-      emoji: '🌤️',
-      color: '#00FFAE',
-    },
+    { 
+      title:'Smart Laundry',
+      description: 'A laundry management app that streamlines order tracking, customer management, and service workflows. Built with a clean interface for both customers and staff to manage laundry orders efficiently.',
+      technologies: ['Angular', 'Springboot', 'PostgreSQL'],
+      githubLink: 'https://github.com/jepkemoi-sheilah1',
+      demoLink: 'https://smartlaundryclient.onrender.com',
+      emoji: '👕',
+      color: '#43e97b',
+
+      },
     {
       title: 'SyncBoard',
       description: 'A collaborative project management tool with workspaces, boards, lists, and cards. Features real-time task management, team collaboration, and user authentication with JWT.',
@@ -41,7 +42,7 @@ const Projects = () => {
           <span className="section-label">My Work</span>
           <h2 className="section-title">Technical Projects</h2>
           <p className="section-subtitle">
-            A selection of projects I've built — each one a new challenge and learning experience.
+            A selection of projects I've built .Each one a new challenge and learning experience.
           </p>
         </div>
 

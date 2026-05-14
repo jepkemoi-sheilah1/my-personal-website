@@ -68,7 +68,7 @@ const Hero = () => {
               <span className="badge-dot" />
               Available for opportunities
             </div>
-
+            </div>
             <h1>
               Hi, I'm <span className="hero-name-blue">Jepkemoi</span>{' '}
               <span className="hero-name-cyan">Sheilah</span>
@@ -80,14 +80,14 @@ const Hero = () => {
             </h2>
 
             <p className="hero-desc">
-              A passionate software engineer specializing in front-end development.
-              I love building clean, functional, and visually appealing web experiences
-              that make a real difference.
+              Passionate software engineer & data analytics enthusiast. I build clean, 
+              functional web experiences while turning raw data into meaningful insights  
+              bridging the gap between technology and smart decision-making
             </p>
 
             <div className="hero-buttons">
               <a href="/contact" className="btn btn-primary">
-                Hire Me
+                See my work
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
@@ -110,27 +110,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="hero-image-wrapper">
-            <div className="hero-image-ring" />
-            <div className="hero-image-ring hero-image-ring-2" />
-            <div className="hero-image">
-              <img src="/my-personal-website/portfolio-image.jpg" alt="Jepkemoi Sheilah" />
-            </div>
-            <div className="hero-badge-float hero-badge-float-1">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
-              React Dev
-            </div>
-            <div className="hero-badge-float hero-badge-float-2">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              Flask & Python
-            </div>
-            <div className="hero-badge-float hero-badge-float-3">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              2+ yrs exp
-            </div>
-          </div>
-
-        </div>
+         
 
         <div className="hero-stats">
           {stats.map((s) => (
@@ -142,7 +122,9 @@ const Hero = () => {
         </div>
       </div>
     </section>
-  );
-};
+    );
+    };
+  
+
 
 export default Hero;

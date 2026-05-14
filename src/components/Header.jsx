@@ -31,7 +31,7 @@ const Header = () => {
       <div className="container">
         <div className="logo">
           <Link to="/">
-            <img src="/my-personal-website/Untitled design.png" alt="Sheilah Logo" />
+            <img src="/my-personal-website/Sheilah Name Logo.png" alt="Sheilah Logo" />
           </Link>
         </div>
 

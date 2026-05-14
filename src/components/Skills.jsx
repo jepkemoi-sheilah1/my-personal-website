@@ -16,6 +16,9 @@ const Skills = () => {
         { name: 'Functional Specifications', icon: '📌' },
         { name: 'Stakeholder Engagement', icon: '🤝' },
         { name: 'UAT Testing', icon: '✅' },
+        {name: 'Excel', icon: '📊' },
+        {name: 'Data Visualization', icon: '📈' },
+        {name : 'PowerBi', icon : '📊' },
       ]
     },
     {

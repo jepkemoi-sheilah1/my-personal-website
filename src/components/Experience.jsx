@@ -68,6 +68,13 @@ const Experience = () => {
 
   const certifications = [
     {
+      title: 'Bachelor of Business Information Technology (BBIT)',
+      issuer: 'Jomo Kenyatta University of Agriculture and Technology (JKUAT)',
+      period: '2019 – 2023',
+      color: '#dc2626',
+      description: 'Studied the intersection of business and technology — covering software development, networking, information systems, and business management. Gained a strong foundation in bridging the gap between technical teams and business stakeholders. Completed an IT attachment at the Social Health Authority (SHA), applying academic knowledge in a real-world healthcare information systems environment.',
+    },
+    {
       title: 'Google Business Data Analytics',
       issuer: 'Coursera',
       period: 'Ongoing',
