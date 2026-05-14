@@ -46,12 +46,11 @@ const Header = () => {
           <ul className="nav-list">
             {navLinks.map(({ to, label, id }) => (
               <li key={to}>
-                
-                <a>
+                <a
                   href={to}
                   className={activeSection === id ? 'active' : ''}
                   onClick={() => setIsMenuOpen(false)}
-                
+                >
                   {label}
                 </a>
               </li>
