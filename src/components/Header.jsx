@@ -1,58 +1,69 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+
+      // Update active section based on scroll position
+      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [location]);
-
   const navLinks = [
-    { to: '/', label: 'Home' },
-    { to: '/about', label: 'About' },
-    { to: '/skills', label: 'Skills' },
-    { to: '/projects', label: 'Projects' },
-    { to: '/experience', label: 'Experience' },
-    { to: '/contact', label: 'Contact' },
+    { to: '#home', label: 'Home', id: 'home' },
+    { to: '#about', label: 'About', id: 'about' },
+    { to: '#skills', label: 'Skills', id: 'skills' },
+    { to: '#projects', label: 'Projects', id: 'projects' },
+    { to: '#experience', label: 'Experience', id: 'experience' },
+    { to: '#contact', label: 'Contact', id: 'contact' },
   ];
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="logo">
-          <Link to="/">
-            <img src="/my-personal-website/Sheilah Name Logo.png" alt="Sheilah Logo" />
-          </Link>
+          <a href="#home">
+            <img src="/sheilah-logo.png" alt="Sheilah Logo" />
+          </a>
         </div>
 
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <ul className="nav-list">
-            {navLinks.map(({ to, label }) => (
+            {navLinks.map(({ to, label, id }) => (
               <li key={to}>
-                <Link
-                  to={to}
-                  className={location.pathname === to ? 'active' : ''}
+                
+                  href={to}
+                  className={activeSection === id ? 'active' : ''}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {label}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
         </nav>
 
         <div className="header-right">
-          <Link to="/contact" className="header-cta">Let's Talk</Link>
+          <a href="#contact" className="header-cta">Let's Talk</a>
           <button
             className={`menu-toggle ${isMenuOpen ? 'menu-open' : ''}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
