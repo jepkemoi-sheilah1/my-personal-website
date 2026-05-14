@@ -62,13 +62,12 @@ const Hero = () => {
     <section id="home" className="hero">
       <div className="container">
         <div className="hero-content">
-
           <div className="hero-text">
             <div className="hero-badge">
               <span className="badge-dot" />
               Available for opportunities
             </div>
-            </div>
+
             <h1>
               Hi, I'm <span className="hero-name-blue">Jepkemoi</span>{' '}
               <span className="hero-name-cyan">Sheilah</span>
@@ -80,19 +79,19 @@ const Hero = () => {
             </h2>
 
             <p className="hero-desc">
-              Passionate software engineer & data analytics enthusiast. I build clean, 
-              functional web experiences while turning raw data into meaningful insights  
-              bridging the gap between technology and smart decision-making
+              Passionate software engineer & data analytics enthusiast. I build clean,
+              functional web experiences while turning raw data into meaningful insights —
+              bridging the gap between technology and smart decision-making.
             </p>
 
             <div className="hero-buttons">
-              <a href="/contact" className="btn btn-primary">
+              <a href="#projects" className="btn btn-primary">
                 See my work
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
               </a>
-              <a href="/my-personal-website/cv.pdf" className="btn btn-secondary" download>
+              <a href="/cv.pdf" className="btn btn-secondary" download>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
                 </svg>
@@ -108,23 +107,20 @@ const Hero = () => {
                 </a>
               ))}
             </div>
-          </div>
 
-         
-
-        <div className="hero-stats">
-          {stats.map((s) => (
-            <div key={s.label} className="hero-stat">
-              <span className="stat-number">{s.number}</span>
-              <span className="stat-label">{s.label}</span>
+            <div className="hero-stats">
+              {stats.map((s) => (
+                <div key={s.label} className="hero-stat">
+                  <span className="stat-number">{s.number}</span>
+                  <span className="stat-label">{s.label}</span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
-    );
-    };
-  
-
+  );
+};
 
 export default Hero;
