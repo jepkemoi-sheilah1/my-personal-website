@@ -9,8 +9,6 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-
-      // Update active section based on scroll position
       const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
       for (const section of sections) {
         const el = document.getElementById(section);
@@ -23,7 +21,6 @@ const Header = () => {
         }
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -45,22 +42,21 @@ const Header = () => {
             <img src="/sheilah-logo.png" alt="Sheilah Logo" />
           </a>
         </div>
-
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <ul className="nav-list">
             {navLinks.map(({ to, label, id }) => (
               <li key={to}>
+                
                   href={to}
                   className={activeSection === id ? 'active' : ''}
                   onClick={() => setIsMenuOpen(false)}
-                
+                >
                   {label}
-                
+                </a>
               </li>
             ))}
           </ul>
         </nav>
-
         <div className="header-right">
           <a href="#contact" className="header-cta">Let's Talk</a>
           <button
