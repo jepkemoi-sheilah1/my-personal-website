@@ -47,10 +47,11 @@ const Header = () => {
             {navLinks.map(({ to, label, id }) => (
               <li key={to}>
                 
+                <a>
                   href={to}
                   className={activeSection === id ? 'active' : ''}
                   onClick={() => setIsMenuOpen(false)}
-                >
+                
                   {label}
                 </a>
               </li>
