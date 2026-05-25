@@ -7,17 +7,17 @@ const Experience = () => {
   const experiences = [
     {
       title: 'Junior Software Developer',
-      subtitle: 'Systems & Business Analysis Support',
+      subtitle: 'Research &Development',
       company: 'Eclectics International',
       location: 'Nairobi, Kenya',
       period: 'Feb 2026 – Present',
       type: 'Full Time',
       color: '#0066ff',
       responsibilities: [
-        'Collaborate with stakeholders to gather, analyze, and document business requirements into functional system features',
+        'Research and Development of software solutions to address business challenges and enhance operational efficiency',
         'Support the Software Development Life Cycle (SDLC) including requirements analysis, development, testing, and deployment',
         'Conduct system documentation including workflows, functional specifications, and process descriptions',
-        'Analyze and optimize business processes by identifying automation and efficiency opportunities within fintech systems',
+        'Assist in API testing, system design support, and troubleshooting to ensure high-quality software delivery',
       ]
     },
     {
@@ -29,10 +29,10 @@ const Experience = () => {
       type: 'Internship',
       color: '#7c3aed',
       responsibilities: [
-        'Identified business problems and gathered requirements through stakeholder engagement and research',
-        'Translated requirements into user stories, functional specifications, and system features',
-        'Participated in business process design and system modeling to support application development',
-        'Contributed to SDLC activities including API testing, system design support, and documentation',
+        'Built scalable enterprise Angular applications using industry-standard design patterns.',
+        'Integrated Spring Boot APIs, including real-time GPS tracking features.',
+        'Prototyped new features and contributed to UI/UX improvements.',
+        'Collaborated within a cross-functional R&D team to deliver frontend solutions.',
       ]
     },
     {

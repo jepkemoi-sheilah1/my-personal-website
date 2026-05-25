@@ -9,6 +9,8 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+      
+      // Determine active section based on scroll position
       const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
       for (const section of sections) {
         const el = document.getElementById(section);
@@ -21,9 +23,25 @@ const Header = () => {
         }
       }
     };
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavClick = (e, to) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    
+    const targetId = to.substring(1); // Remove the # from the href
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      targetElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
 
   const navLinks = [
     { to: '#home', label: 'Home', id: 'home' },
@@ -38,10 +56,18 @@ const Header = () => {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="logo">
-          <a href="#home">
-            <img src="/sheilah-logo.png" alt="Sheilah Logo" />
+          <a
+            href="#home"
+            onClick={(e) => handleNavClick(e, '#home')}
+          >
+            <img
+              src="/sheilah-logo.png"
+              alt="Sheilah Jepkemoi logo"
+              className="logo-img"
+            />
           </a>
         </div>
+        
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <ul className="nav-list">
             {navLinks.map(({ to, label, id }) => (
@@ -49,7 +75,7 @@ const Header = () => {
                 <a
                   href={to}
                   className={activeSection === id ? 'active' : ''}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => handleNavClick(e, to)}
                 >
                   {label}
                 </a>
@@ -57,8 +83,15 @@ const Header = () => {
             ))}
           </ul>
         </nav>
+        
         <div className="header-right">
-          <a href="#contact" className="header-cta">Let's Talk</a>
+          <a 
+            href="#contact" 
+            className="header-cta"
+            onClick={(e) => handleNavClick(e, '#contact')}
+          >
+            Let's Talk
+          </a>
           <button
             className={`menu-toggle ${isMenuOpen ? 'menu-open' : ''}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}

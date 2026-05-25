@@ -3,7 +3,7 @@ import './About.css';
 
 const About = () => {
   const highlights = [
-    { icon: '🎓', title: 'Education', desc: 'Software Engineering graduate with a strong foundation in CS fundamentals.' },
+    { icon: '🎓', title: 'Education', desc: 'Software Engineering graduate with a strong foundation in Business Information Technology ' },
     { icon: '💼', title: 'Experience', desc: '1+ years building full-stack web applications with modern frameworks.' },
     { icon: '🌍', title: 'Location', desc: 'Based in Nairobi, Kenya ,open to remote opportunities worldwide.' },
     { icon: '🚀', title: 'Passion', desc: 'Passionate about clean code, great UX, and products that solve real problems.' },
@@ -26,7 +26,7 @@ const About = () => {
                 I'm Jepkemoi Sheilah, a software engineer and data analytics enthusiast 
                 based in Nairobi, Kenya. My tech journey started with curiosity and grew 
                 into a passion for building clean, functional web experiences using React, 
-                Python, Flask, and Spring Boot.
+                Python, Flask, SQLAlchemy.
           </p>
             <p>
               What sets me apart is my drive to go beyond the interface I love analyzing 

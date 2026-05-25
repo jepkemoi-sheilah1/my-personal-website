@@ -31,7 +31,6 @@ const Skills = () => {
         { name: 'React', icon: <FaReact color="#61dafb" size={18} /> },
         { name: 'Angular', icon: <FaAngular color="#dd0031" size={18} /> },
         { name: 'Flask', icon: <SiFlask color="#000000" size={18} /> },
-        { name: 'Spring Boot', icon: <SiSpringboot color="#6db33f" size={18} /> },
         { name: 'RESTful APIs', icon: '🔗' },
       ]
     },

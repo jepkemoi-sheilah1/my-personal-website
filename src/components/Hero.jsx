@@ -31,6 +31,17 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, roleIndex]);
 
+  const handleSeeWorkClick = (e) => {
+    e.preventDefault();
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   const socialLinks = [
     {
       name: 'GitHub',
@@ -54,7 +65,7 @@ const Hero = () => {
 
   const stats = [
     { number: '3+', label: 'Projects Built' },
-    { number: '2+', label: 'Years Experience' },
+    { number: '1+', label: 'Years Experience' },
     { number: '5+', label: 'Technologies' },
   ];
 
@@ -86,7 +97,11 @@ const Hero = () => {
             </p>
 
             <div className="hero-buttons">
-              <a href="/contact" className="btn btn-primary">
+              <a 
+                href="#projects" 
+                className="btn btn-primary"
+                onClick={handleSeeWorkClick}
+              >
                 See my work
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -110,8 +125,6 @@ const Hero = () => {
             </div>
           </div>
 
-         
-
         <div className="hero-stats">
           {stats.map((s) => (
             <div key={s.label} className="hero-stat">
@@ -122,9 +135,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
-    );
-    };
-  
-
+  );
+};
 
 export default Hero;
